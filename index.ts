@@ -30,3 +30,13 @@ const usuarios = [
         status: false
     }
 ];
+
+const buscaNome = (lista: { nome: string, idade: number, status: boolean }[], nome: string): { nome: string, idade: number, status: boolean }[] => {
+    const usuariosEncontrados = lista.filter((usuario) => {
+        return usuario.nome.toLocaleLowerCase().includes(nome.toLocaleLowerCase());
+    })
+
+    return usuariosEncontrados;
+}
+
+console.log(buscaNome(usuarios, "jo"));
